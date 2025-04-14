@@ -11,12 +11,27 @@ function parseQueryString(queryString) {
 	return parsedParams;
 }
 
+function is_numeric(str){
+    return /^\d+$/.test(str);
+}
+
 function createElements(queryObj){
 	
+	const numCont = document.getElementById("numCont");
+
 	for (const key in queryObj) {
 		const element = document.createElement("div");
-		element.innerHTML = `${key}: ${queryObj[key]}`;
-		document.body.appendChild(element);
+
+		let val = queryObj[key];
+		if(is_numeric(val)){
+			if(val < 10){
+				val = "0" + val;
+			}
+		}
+
+		element.innerHTML = val;
+		element.classList.add("digit");
+		numCont.appendChild(element);
 	}
 }
 
