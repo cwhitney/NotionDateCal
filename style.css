@@ -52,6 +52,10 @@ select {
   }
 }
 
+:root {
+	font-size: 16px; /* Base font size */
+}
+
 @font-face {
 	font-family: "Glass Houses";
 	src: url("./GlassHouses-0OX4.woff2") format("woff2");
@@ -60,14 +64,14 @@ select {
 }
 
 #numCont {
+	font-family: "Glass Houses", sans-serif;
+
 	display: flex;
 	flex-basis: content;
 	flex-direction: row;
 }
 
 .digit {
-	font-family: "Glass Houses", sans-serif;
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -79,7 +83,17 @@ select {
 	height: 170px;
 
 	padding: 20px;
-	margin: 0 10px 0 0;
+	margin: 0 2px 0 0;
 
-	font-size: 10vh;
+	font-size: 5rem;
+}
+
+.month {
+	font-family: "Inter", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 200;
+	font-style: normal;
+	position: absolute;
+	font-size: 1.0rem;
+	top:120px;
 }
